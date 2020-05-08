@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WebUnblocked</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- header font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  
+  <!-- body font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/search-bar.min.css">
+  <link rel="stylesheet" href="css/search-bar-font.min.css">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <script src="js/jquery-3.3.1.slim.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <style type="text/css">
+  
+    /* fonts */
+    body { font-family: 'Montserrat', sans-serif;  letter-spacing: 1px;}
+    h1 { font-family: 'Montserrat', sans-serif; letter-spacing: 2px;}
+    h2, h3, h4, h5, h6 { letter-spacing: 2px; font-weight: normal;}
+  
+    /* colors */
+    body { background-color: #000306; color: white;}
+    .container { background-color: rgb(43, 43, 43); border-color: #4197fe}
+    a { color: #62BECB; }
+    a:hover {color: #82DEEB }
+
+	#error {  border:1px dotted white; background: brown; }
+    
+    /* stripes and borders */
+    
+    .container { border-style: solid; border-width: 1px; border-radius: 10px;  -moz-border-radius: 10px;  -webkit-border-radius: 10px;  overflow:hidden;  /* otherwise the background image appears on top of the curved border */ }
+    
+    
+    /* layout */
+    body { text-align: center; line-height:180% }
+	a { margin: 10px}
+    .container { width: 760px; margin: 40px auto; text-align: left;  max-width: calc(100% - 10px);}
+    
+    h2, h3, h4, h5, h6 { margin-bottom: 0;  }
+    ul { line-height: 150%; }
+    ul, p {  margin-top: 5px; margin-bottom: 0; }
+    .main, .footer { padding: 1px 10px 0 10px; }
+    
+    #error {display: none; padding: 5px 10px; margin: 30px 10px; }
+    
+    form ul { list-style-type: none; padding-left: 25px;}
+    input[type=text] { width: 640px; max-width: calc(100% - 12em) }
+    
+    .footer { position: relative; clear: both;}
+    .footer p { margin:0; position: absolute; bottom: 10px;  right: 10px; padding-left: 10px; }
+    
+    #google-ad {
+        text-align: center;
+        margin: 10px auto;
+    }
+    @media(min-width: 768px) {
+        #google-ad {
+            margin: 0;
+            float:right; 
+            margin:4px 2px 2px 20px;
+        }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div style="margin-top: 1.5em;" align="center" class="main">
+      <h1>WebUnblocked</h1>
+	    <h3>eliasbenb</h3>
+    <div style="margin-top: 2em;" class="row mb-5">
+      <div class="col-lg-8 mx-auto">
+        <div class="bg-white p-5 rounded shadow">
+            <form action="no-js" method="get" id="unblocker-form">
+            <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+              <div class="input-group">
+                <input type="search" placeholder="Input a URL" aria-describedby="button-addon1" class="form-control border-0 bg-light" id="url" name="url">
+                <div class="input-group-append">
+                  <button id="button-addon1" type="submit" value="Go" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+	<script>
+		function $(id){
+			return document.getElementById(id);
+		}
+		
+		// $('unblocker-form').onsubmit = function(){
+		//	var url = $('url').value;
+		//	if(url.substr(0,4) != "http"){
+		//		url = "http://" + url;
+		//	}
+		//	window.location.pathname = 'proxy/' + url;
+		//	return false;
+		//};
+		
+		function checkError(){
+			var search = window.location.search;
+			var start = search.indexOf('error=');
+			if(start > -1){
+				var stop = search.indexOf('&', start);
+				if(stop == -1){ stop = undefined; }
+				// +6 for "error="
+				var err = search.substr(start+6, stop);
+                var $error = $('error');
+				$error.innerText = $error.textContent = decodeURIComponent(err);
+				$error.style.display = "block";
+			}
+		}
+    
+		window.onload = function() { 
+			$('url').focus(); 
+			checkError(); 
+		}
+	</script>
+</body>
+</html>
