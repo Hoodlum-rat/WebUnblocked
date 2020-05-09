@@ -1,8 +1,8 @@
 {
-  "name": "weedy's web proxy",
-  "description": "lets get this bread",
+  "name": "WebUnblocked",
+  "description": "noooooo you can't just block the internet! haha webunblocked go brrrrrr",
   "image": "heroku/nodejs",
-  "repository": "https://github.com/chargedpika/heroku-node-proxy",
-  "keywords": ["node-noblocker", "chargedpika"],
-  "website": "https://github.com/chargedpika"
+  "repository": "https://github.com/eliasbenb/webunblocked",
+  "keywords": ["node-noblocker"],
+  "website": "https://eliasbenb.github.io"
 }
