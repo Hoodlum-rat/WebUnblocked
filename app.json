@@ -2,7 +2,7 @@
   "name": "WebUnblocked",
   "description": "noooooo you can't just block the internet! haha webunblocked go brrrrrr",
   "image": "heroku/nodejs",
-  "repository": "https://github.com/eliasbenb/webunblocked",
+  "repository": "https://github.com/hoodlum-rat/webunblocked",
   "keywords": ["node-noblocker"],
   "website": "https://eliasbenb.github.io"
 }
